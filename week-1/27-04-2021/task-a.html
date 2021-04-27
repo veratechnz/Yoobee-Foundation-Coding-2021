@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic Statements & Variables</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+      .content {
+        border: 1px solid #888;
+        width: 50%;
+        margin: 0 auto;
+        padding: 25px;
+        margin-top: 80px;
+      }
+
+      button {
+        margin-top: 20px;
+      }
+
+      .cost {
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content" id="content">
+      <h2>Student Favorites</h2>
+      <div id="cost" class="cost">
+        <p>
+          <span>Name:</span>
+          <span id="name">Blank</span>
+        </p>
+        <p>
+          <span>Movie:</span>
+          <span id="movie">Blank</span>
+        </p>
+        <p>
+          <span>Food:</span>
+          <span id="food">Blank</span>
+        </p>
+      </div>
+      <button type="button" class="btn btn-primary" id="calculate">Update</button>
+    </div>
+    <script>
+      // Variables that store values
+      var name = 'Jared';
+      var movie = 'Lawrence of Arabia';
+      var food = 'Pasta';
+
+      // Get elements
+      var getName = document.getElementById('name');
+      var getMovie = document.getElementById('movie');
+      var getFood = document.getElementById('food');
+
+      // Change elements content
+      getName.textContent = name;
+      getMovie.textContent = movie;
+      getFood.textContent = food;
+    </script>
+  </body>
+</html>

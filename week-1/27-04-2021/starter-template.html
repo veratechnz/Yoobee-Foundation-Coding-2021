@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic Statements & Variables</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+      .content {
+        border: 1px solid #888;
+        width: 50%;
+        margin: 0 auto;
+        padding: 25px;
+        margin-top: 80px;
+      }
+
+      button {
+        margin-top: 20px;
+      }
+
+      .cost {
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content" id="content">
+      <h2>Apple Price Total</h2>
+      <div id="cost" class="cost">Cost: $5 per apple</div>
+      <button type="button" class="btn btn-primary" id="calculate">Calculate</button>
+    </div>
+    <script>
+      // Scenario A - Click the window and change the cost id elements content
+      // Setting up variables, first contains a string value of a new cost
+      var newCost = 'Cost: $10 per apple';
+      // Next variable contains the cost div on line 28, this is how you grab
+      // an element with vanilla javascript
+      var getDiv = document.getElementById('cost');
+      // console.log, console.dir, objects, 3 type values
+      // ** console.log a string, a boolean, and a number
+      window.onclick = function () {
+        getDiv.innerText = newCost;
+      }
+    </script>
+  </body>
+</html>

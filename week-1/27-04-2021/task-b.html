@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic Statements & Variables</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+      .content {
+        border: 1px solid #888;
+        width: 50%;
+        margin: 0 auto;
+        padding: 25px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+
+      button {
+        margin-top: 20px;
+      }
+
+      .student {
+        font-size: 24px;
+      }
+
+      #content .btn {
+        width: 100px;
+        margin: 0 auto;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content" id="content">
+      <h2>Student Favorites A</h2>
+      <div class="student">
+        <p>
+          <span>Name:</span>
+          <span id="name">Blank</span>
+        </p>
+        <p>
+          <span>Movie:</span>
+          <span id="movie">Blank</span>
+        </p>
+        <p>
+          <span>Food:</span>
+          <span id="food">Blank</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="content" id="content">
+      <h2>Student Favorites B</h2>
+      <div class="student">
+        <p>
+          <span>Name:</span>
+          <span id="nameB">Blank</span>
+        </p>
+        <p>
+          <span>Movie:</span>
+          <span id="movieB">Blank</span>
+        </p>
+        <p>
+          <span>Food:</span>
+          <span id="foodB">Blank</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="content" id="content">
+      <h2>Student Favorites C</h2>
+      <div class="student">
+        <p>
+          <span>Name:</span>
+          <span id="nameC">Blank</span>
+        </p>
+        <p>
+          <span>Movie:</span>
+          <span id="movieC">Blank</span>
+        </p>
+        <p>
+          <span>Food:</span>
+          <span id="foodC">Blank</span>
+        </p>
+      </div>
+      <button type="button" class="btn btn-primary" id="update">Update All</button>
+    </div>
+    <script>
+
+      // Get button element
+      var getButton = document.getElementById('update');
+
+      // Create a click event with the button element
+      getButton.onclick = function () {
+
+        // ----------------- Section A
+        // Variables that store values
+        var name = 'Jared';
+        var movie = 'Lawrence of Arabia';
+        var food = 'Pasta';
+
+        // Get elements
+        var getName = document.getElementById('name');
+        var getMovie = document.getElementById('movie');
+        var getFood = document.getElementById('food');
+
+        // Change elements content
+        getName.textContent = name;
+        getMovie.textContent = movie;
+        getFood.textContent = food;
+
+
+        // ----------------- Section B
+        // Variables that store values
+        var nameB = 'Anne';
+        var movieB = 'Pretty Woman';
+        var foodB = 'Fruit Salad';
+
+        // Get elements
+        var getNameB = document.getElementById('nameB');
+        var getMovieB = document.getElementById('movieB');
+        var getFoodB = document.getElementById('foodB');
+
+        // Change elements content
+        getNameB.textContent = nameB;
+        getMovieB.textContent = movieB;
+        getFoodB.textContent = foodB;
+
+
+        // ----------------- Section C
+        // Variables that store values
+        var nameC = 'Alan';
+        var movieC = 'Star Wars';
+        var foodC = 'Steak';
+
+        // Get elements
+        var getNameC = document.getElementById('nameC');
+        var getMovieC = document.getElementById('movieC');
+        var getFoodC = document.getElementById('foodC');
+
+        // Change elements content
+        getNameC.textContent = nameC;
+        getMovieC.textContent = movieC;
+        getFoodC.textContent = foodC;
+
+      };
+      // -- onclick Event ENDS
+    </script>
+  </body>
+</html>
