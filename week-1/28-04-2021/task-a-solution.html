@@ -5,8 +5,6 @@
 	<title>Arrays</title>
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/style.css">
-	<link rel="stylesheet" href="assets/animate.css">
 	<style>
 		/* CSS Here */
 		body {
@@ -22,8 +20,7 @@
 		<span id="one">This</span>
 		<span id="two"> is </span>
 		<span id="three">a </span>
-		<span id="three">sentence</span>
-		<span id="four">that</span>
+		<span id="four">sentence</span>
 		<span id="five">lives</span>
 		<span id="six">within</span>
 		<span id="seven">many</span>
@@ -74,14 +71,33 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 
 	<script>
-		var demoArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-		demoArray[6] = 'holiday';
+	// 1. Make a function to change the array
+	function arrayAdjustment () {
+			var demoArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+			// 1. Write one line of code that changes the value of the last day in the array to 'holiday', overwriting the previous value
+			demoArray[6] = 'Holiday';
+			// Hint: array[?] = 'new thing';
+			// 2. Create a new variable called first day of the week, and set it equal 'Monday' in the array
+			var firstDayOfWeek = demoArray[0];
+			// 3. Add the string 'days of the week:' to the beginning of the array
+			demoArray.unshift('days of the week:');
+			// Hint: https://www.w3schools.com/jsref/jsref_unshift.asp
+			// 4. Delete the last item of the array with a method
+			demoArray.pop();
+			// Hint: https://www.w3schools.com/jsref/jsref_pop.asp
+			// 5. Use an array method to remove only the 2nd day in the array
+			demoArray.splice(1,1);
+			console.log(demoArray);
+			// Hint: https://www.w3schools.com/jsref/jsref_splice.asp
+			// 6. Print the length of the array to the console with console.log().
+			console.log(demoArray.length);
+			// 7. console.log() the entire final array
+			console.log(demoArray);
+	} // placeMonthsOnPage ENDS
 
-		console.log(demoArray);
-
-
-
+	// 2. Call the function
+	arrayAdjustment();
 
 	</script>
 </body>

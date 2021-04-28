@@ -22,8 +22,7 @@
 		<span id="one">This</span>
 		<span id="two"> is </span>
 		<span id="three">a </span>
-		<span id="three">sentence</span>
-		<span id="four">that</span>
+		<span id="four">sentence</span>
 		<span id="five">lives</span>
 		<span id="six">within</span>
 		<span id="seven">many</span>
@@ -74,14 +73,38 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 
 	<script>
-		var demoArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-		demoArray[6] = 'holiday';
+	// 1. Make a function to change the months
+	function placeMonthsOnPage () {
+		var arrayItem = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+		var getOne = document.getElementById('one');
+		getOne.textContent = arrayItem[0];
+		var getOne = document.getElementById('two');
+		getOne.textContent = arrayItem[1];
+		var getOne = document.getElementById('three');
+		getOne.textContent = arrayItem[2];
+		var getOne = document.getElementById('four');
+		getOne.textContent = arrayItem[3];
+		var getOne = document.getElementById('five');
+		getOne.textContent = arrayItem[4];
+		var getOne = document.getElementById('six');
+		getOne.textContent = arrayItem[5];
+		var getOne = document.getElementById('seven');
+		getOne.textContent = arrayItem[6];
+		var getOne = document.getElementById('eight');
+		getOne.textContent = arrayItem[7];
+		var getOne = document.getElementById('nine');
+		getOne.textContent = arrayItem[8];
+		var getOne = document.getElementById('ten');
+		getOne.textContent = arrayItem[9];
+		var getOne = document.getElementById('eleven');
+		getOne.textContent = arrayItem[10];
+		var getOne = document.getElementById('twelve');
+		getOne.textContent = arrayItem[11];
+	} // placeMonthsOnPage ENDS
 
-		console.log(demoArray);
-
-
-
+	// 2. Call the function
+	placeMonthsOnPage();
 
 	</script>
 </body>
