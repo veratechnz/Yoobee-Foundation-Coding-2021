@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="hotel">
+    <h1></h1>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+
+    // A hotel object with properties and methods
+    var hotel = {
+      name: 'Peppers',
+      rooms: 450,
+      miniBar: ['Water', 'Coke', 'Lemonade', 'Orange juice'],
+      // A method/function that updates the DOM with the content from this object,
+      // also creates elements within the page, because .js can do virtually anything
+      updateDom: function () {
+        var getHeader = document.querySelector('h1');
+        getHeader.textContent = hotel.name;
+        var para = document.createElement('p');   // Create a <p> element
+        para.textContent = hotel.miniBar[0];                   // Insert text
+        document.body.appendChild(para);
+      }
+    };
+    // Object ENDS
+
+    // A window click event with a function that calls the updateDom method above
+    // It will........update the DOM
+    window.onclick = function () {
+      hotel.updateDom();
+    };
+
+  </script>
+</body>
+</html>

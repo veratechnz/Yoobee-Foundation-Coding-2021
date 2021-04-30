@@ -1,0 +1,18 @@
+Continuous Learning - Hotel Object:
+
+  1.  Create a function to wrap all of your DOM manipulation code in. Call it updateDom()
+  2.  Make this function a method by including it within your hotel object (method example below)
+var person = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  somethingLikeThis : function() {
+    // Place all DOM manipulation code below here...
+  }
+};
+// Calling the function
+person.somethingLikeThis();
+  3. Create some of your html code within the method function, use DOM creation methods (see links below)
+  4. Comment all code and push to github
+  https://www.w3schools.com/jsref/met_document_createelement.asp
+  https://www.bitdegree.org/learn/javascript-create-element (edited)

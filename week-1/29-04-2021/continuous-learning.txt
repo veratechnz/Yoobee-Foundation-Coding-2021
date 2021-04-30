@@ -1,0 +1,23 @@
+Continuous Learning Javascript Object:
+Task-A: Finish off all three rows of the table from today's class activity, including a jQuery click event for each name table cell to populate the table's info:
+Initial Code Template is in #code-samples object.html (edited)
+
+Task B: Make a fourth html row in your table for this actor, output all of the same info, including one of the movies from using the object below
+	var person4 = {
+				firstName: 'Al',
+				lastName: 'Pacino',
+				movies: {
+					mafia: ['Godfather', 'Godfather 2', 'Carlitos Way'],
+					drama: ['Scent Of A Woman', 'Dog Day Afternoon']
+				},
+				age: 65
+	};
+(edited)
+
+Task C: Use the same object pattern as Task B to create a 5th actor/actress/director and output it into the table. Use at least 2 movie arrays in your object.
+You only need one movie in the DOM/HTML
+
+Task D - For the brave
+This is an object with a method. The method updateTable is just like a function, except it lives in an object.
+Call the method from inside the jQuery click event (which should be further down your page)
+Create a second method, that prepares the jQuery click event, prepareClickEvent: (You will have to call this second method from somewhere outside the object)

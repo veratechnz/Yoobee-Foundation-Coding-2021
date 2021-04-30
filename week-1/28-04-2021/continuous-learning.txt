@@ -1,0 +1,17 @@
+Continuous Learning - Javascript Arrays
+Today we looked at arrays and continued to use methods and direct access to output their content to the DOM/HTML.
+The following task will not change or update any html elements, it only logs to the console
+var demoArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+Task A (all relating to the array above):
+1. Write one line of code that changes the value of the last day/item/Sunday in the array to 'holiday', overwriting the previous value
+Hint: array[?] = 'new thing';
+2. Create a new variable called first day of the week, and set it equal to 'Monday' in the array
+3. Add the string 'days of the week:' to the beginning of the array
+Hint: https://www.w3schools.com/jsref/jsref_unshift.asp
+4. Delete the last item of the array with a method
+Hint: https://www.w3schools.com/jsref/jsref_pop.asp
+5. Use an array method to remove only the 2nd day in the array
+Hint: https://www.w3schools.com/jsref/jsref_splice.asp
+6. Print the length of the array to the console with console.log().
+7. console.log() the entire final array
+9. Wrap all of the above code in a function, call it arrayAdjustment and call the function. (edited)

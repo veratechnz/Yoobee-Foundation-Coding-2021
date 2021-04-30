@@ -1,0 +1,14 @@
+Continued From Today's Class - Javascript - Variables
+Today we looked at variables and basic ways of updating an html UI (DOM) with variables.
+Please check the code samples channel to see images regarding variables. The last image is the most simple form of a variable:
+var myName = 'Jared';
+Task A: Examine the code template below and:
+Make a new div with Name: blank // Movie: blank // Food: blank
+Create 3 new variables that update and change the content (blank changes to real info)
+Task B: 3 Student Divs with 9 variables & a click Event:
+Make 3 divs that represent 3 different students (Same as above x3)
+Create 9 variables to update all info types (Name: blank // Movie: blank // Food: blank x3)
+Have a click event (either on a button or a window) that updates the info in the HTML/DOM
+Task C: Using setTimeout() to incrementally update the DOM/HTML
+Use 1 or more set timeout's to update the student content one at a time after 2 seconds
+I will post all answers as code files below this post :writing_hand:  (edited)
