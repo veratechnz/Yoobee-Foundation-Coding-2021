@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		* {
+			font-family: 'Source Sans Pro', sans-serif;
+			font-weight: 300;
+		}
+
+		body {
+			background-color: #333;
+			font-size: 30px;
+		}
+
+		h4 {
+			font-size: 54px;
+		}
+
+		div {
+			border: 1px solid #000;
+			width: 25%;
+			margin: 0 auto;
+			margin-top: 8em;
+			padding: 1.5em;
+			background-color: #efefef;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div>
+		<h4 id="output">
+			<span id="hours"></span>
+			<span>:</span>
+			<span id="minutes"></span>
+			<span>:</span>
+			<span id="seconds"></span>
+		</h4>
+		<p id="statement"></p>
+	</div>
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+	<script>
+
+	//*** Task 1 - Make 3 more true 'logical conditional if' statements that are based on the current time
+
+	$(document).ready(function(){
+
+		// Access Elements In The HTML
+		var getHoursHtml = document.getElementById('hours');
+		var getMinutesHtml = document.getElementById('minutes');
+		var getSecondsHtml = document.getElementById('seconds');
+		var statement = document.getElementById('statement');
+
+		// ---------------------------------------------------------------
+
+		// Use the date constructor, to make a date and time object
+		var timeStamp = new Date();
+
+		// Assign times to variables
+		var hours = timeStamp.getHours();
+		var minutes = timeStamp.getMinutes();
+		var seconds = timeStamp.getSeconds();
+
+		// Update the DOM or HTML with the time values from the variables above
+		getHoursHtml.textContent = hours;
+		getMinutesHtml.textContent = minutes;
+		getSecondsHtml.textContent = seconds;
+
+		// console.dir(timeStamp);
+		console.log(hours);
+		console.log(minutes);
+		console.log(seconds);
+
+		// Using an if logical to make a true statement
+
+		// If the hours are less than 12 and greater than 9
+    if ((hours < 12) && (hours > 6)) {
+    	alert('It is still morning, and you can eat breakfast')
+    }
+
+    // If the minutes are greater than 55 or the seconds are greater than 55
+    if ((minutes > 55) || (seconds > 55)) {
+    	alert('Soon, either the hour or minute will change')
+    }
+
+		// **** Extra // Stay away unless you have some free time
+
+		// ::::::Digital Clock::::::
+		setInterval(function () {
+			var timeStamp = new Date();
+
+			var hours = timeStamp.getHours();
+			var minutes = timeStamp.getMinutes();
+			var seconds = timeStamp.getSeconds();
+
+			getHoursHtml.textContent = hours;
+			getMinutesHtml.textContent = minutes;
+			getSecondsHtml.textContent = seconds;
+		}, 1000);
+
+	});
+	// Document Ready ENDS
+
+	</script>
+</body>
+</html>

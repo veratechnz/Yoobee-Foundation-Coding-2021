@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arrays</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		* {
+			font-family: 'Source Sans Pro', sans-serif;
+			font-weight: 500;
+		}
+
+		body {
+			background-color: #333;
+		}
+
+		li {
+			font-size: 18px;
+		}
+
+		h2 {
+			margin-bottom: 25px;
+		}
+
+		div {
+			border: 1px solid #000;
+			width: 40%;
+			margin: 0 auto;
+			margin-top: 8em;
+			padding: 1.5em;
+			background-color: #efefef;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div>
+		<h2>Question Time</h2>
+		<h4 id="name"></h4>
+		<h4 id="city"></h4>
+		<h4 id="food"></h4>
+	</div>
+
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+	<script>
+
+	//*** Task 2 - Add two more questions that output to the D.O.M
+
+	$(document).ready(function(){
+
+		var person = prompt('Please enter your name');
+		var city = prompt('What is your favourite city?');
+		var food = prompt('What food do you like?');
+
+		// If the answer to the prompt is not empty
+		if (person != '') {
+		  document.getElementById('name').innerHTML = 'Hello ' + person;
+		}
+
+		if (city != '') {
+			document.getElementById('city').innerHTML = 'Your favourite city is ' + city;
+		} 
+
+		if (food === 'chocolate') {
+			document.getElementById('food').innerHTML = 'You enjoy eating ' + food;
+		} else {
+			alert('Your taste in food is lame!');
+		}
+
+
+	});
+	// Document Ready ENDS
+
+	</script>
+</body>
+</html>

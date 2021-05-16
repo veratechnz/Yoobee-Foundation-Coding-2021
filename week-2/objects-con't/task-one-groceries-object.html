@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		* {
+			font-family: 'Source Sans Pro', sans-serif;
+			font-weight: 500;
+		}
+
+		body {
+			background-color: #333;
+		}
+
+		li {
+			font-size: 18px;
+		}
+
+		div {
+			border: 1px solid #000;
+			width: 40%;
+			margin: 0 auto;
+			margin-top: 8em;
+			padding: 1.5em;
+			background-color: #efefef;
+		}
+
+		.tlt {
+			margin: 300px;
+			color: yellow;
+			/* jQuery's fadeIn will change this */
+			display: none;
+			line-height: 1.28;
+			color: #fbff38;
+		}
+	</style>
+</head>
+<body>
+
+	<div>
+		<h2>Groceries List</h2>
+		<ul>
+			<li id="fruit"></li>
+			<li id="iceCream"></li>
+			<li id="wine"></li>
+			<li id="meat"></li>
+			<li id="total"></li>
+		</ul>
+	</div>
+
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+	<script>
+
+	//*** Task: Add the total to the HTML
+
+	$(document).ready(function(){
+
+			// An object  
+			var groceries = {
+				fruit: 'Apples',
+				iceCream: 'Vanilla',
+				wine: 'Red',
+				meat: 'Chicken',
+				total: '$30 Dollars'
+			};
+
+			// Console.log the object city string data
+			console.log(groceries);
+
+			// We need to get the D.O.M or html elements
+			var getFruit = document.getElementById('fruit');
+			var getIceCream = document.getElementById('iceCream');
+			var getWine = document.getElementById('wine');
+			var getMeat = document.getElementById('meat');
+
+			// Updating the html/DOM elements with new text content from the object
+			getFruit.textContent = groceries.fruit;
+			getIceCream.textContent = groceries.iceCream;
+			getWine.textContent = groceries.wine;
+			getMeat.textContent = groceries.meat;
+
+	});
+	// Document Ready ENDS
+
+	</script>
+</body>
+</html>

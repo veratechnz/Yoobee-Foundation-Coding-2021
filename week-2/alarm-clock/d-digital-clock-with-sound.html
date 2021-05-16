@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+	<style>
+		/* CSS Here */
+		* {
+			font-family: 'Source Sans Pro', sans-serif;
+			font-weight: 300;
+		}
+
+		body {
+			background-color: #333;
+			font-size: 30px;
+		}
+
+		h4 {
+			font-size: 72px;
+		}
+
+		.clock {
+			border: 1px solid #000;
+			width: 610px;
+			margin: 0 auto;
+			margin-top: 8em;
+			padding: 1.5em;
+			background-color: #000;
+			position: relative;
+			padding-left: 65px;
+			border-radius: 15px;
+			opacity: 0;
+		}
+
+		span {
+			color: green;
+		}
+
+		/* Same has jQuery's hide method - use css display none */
+		.am-marker, 
+		.pm-marker,
+		.minute-marker,
+		.second-marker {
+			display: none;
+		}
+
+		.second-marker,
+		.minute-marker {
+			display: inline-block;
+			margin-left: -5px;
+		}
+
+		.am-marker,
+		.pm-marker {
+			position: absolute;
+			top: 77px;
+			right: 170px;
+			font-size: 40px;
+		}	
+
+		.text-center {
+			margin-top: 30px;
+		}
+
+		button {
+			background-color: #000;
+			color: green;
+			text-transform: uppercase;
+		}
+
+		button:hover,
+		button:active,
+		button:focus {
+			background-color: #000;
+			color: green !important;
+			text-transform: uppercase;
+			border: green;
+			outline: 0 !important;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="clock">
+		<h4 id="output">
+			<span id="hours"></span>
+			<span>:</span>
+			<!-- 0 that will hide or show when conditional matches -->
+			<span id="minuteMarker" class="minute-marker">0</span>
+			<span id="minutes"></span>
+			<span>:</span>
+			<!-- 0 that will hide or show when conditional matches -->
+			<span id="secondMarker" class="second-marker">0</span>
+			<span id="seconds"></span>
+			<!-- am/pm that will hide or show when conditional matches -->
+			<span id="amMarker" class="am-marker">AM</span>
+			<span id="pmMarker" class="pm-marker">PM</span>
+		</h4>
+		<p id="statement"></p>
+	</div>
+
+	<div class="text-center">
+		<button type="button" class="btn">Click to set alarm and view digital clock</button>
+	</div>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+	<script>
+
+	// A. Digital Clock
+	$(document).ready(function(){
+	// ###Step 1. Lets grab some elements from the DOM
+		// Access Elements In The HTML
+		var getHoursHtml = document.getElementById('hours');
+		var getMinutesHtml = document.getElementById('minutes');
+		var getSecondsHtml = document.getElementById('seconds');
+		var statement = document.getElementById('statement');
+
+		// ALARM CLOCK A***
+		// This click is because Google chrome will not play sounds until a user has interacted
+		// or clicked on the screen, privacy and intrusion rules. I added a nice fadeTo(opacity)
+		// effect on the clock, to make it seem like the button is actually needed...
+		$('button').click(function(){
+			$('.clock').fadeTo('slow', 1);
+		});
+
+	// ###Step 2. First We load the time in straight away 
+		// *******************---------------------------
+			var timeStamp = new Date();
+
+			// Code so the initial display works immediatley without a second display
+			var hours = timeStamp.getHours();
+			var minutes = timeStamp.getMinutes();
+			var seconds = timeStamp.getSeconds();
+
+			getHoursHtml.textContent = hours;
+			getMinutesHtml.textContent = minutes;
+			getSecondsHtml.textContent = seconds;
+
+			// Check the code and hide or show the right time markers
+			if (minutes < 10) {
+				$('#minuteMarker').show();
+			} else {
+				$('#minuteMarker').hide();
+			};
+
+			if (seconds < 10) {
+				$('#secondMarker').show();
+			} else {
+				$('#secondMarker').hide();
+			};
+
+			if (hours < 12) {
+				$('#amMarker').show();
+				$('#pmMarker').hide();
+			} else {
+				$('#pmMarker').show();
+				$('#amMarker').hide();
+			};
+
+	//### Step 3. This code all happens on a continuous one second loop
+			// ::::::Digital Clock::::::
+			setInterval(function () {
+				// We have to check and set the date every second....
+				var timeStamp = new Date();
+				var hours = timeStamp.getHours();
+				var minutes = timeStamp.getMinutes();
+				var seconds = timeStamp.getSeconds();
+				getHoursHtml.textContent = hours;
+				getMinutesHtml.textContent = minutes;
+				getSecondsHtml.textContent = seconds;
+
+				// We also have to re-run all the second and minute checks every second...
+				if (minutes < 10) {
+					$('#minuteMarker').show();
+				} else {
+					$('#minuteMarker').hide();
+				};
+
+				if (seconds < 10) {
+					$('#secondMarker').show();
+				} else {
+					$('#secondMarker').hide();
+				};
+
+				if (hours < 12) {
+					$('#amMarker').show();
+					$('#pmMarker').hide();
+				} else {
+					$('#pmMarker').show();
+					$('#amMarker').hide();
+				};
+
+	// ###Step 4. Make an alarm with hours, minutes, seconds  
+				// This is where we set the time for the alarm 
+				var alarmSetting = [19, 37, 50];
+				// This checks the alarm time
+				if ((alarmSetting[0] === hours) && (alarmSetting[1] === minutes) && (alarmSetting[2] === seconds)) {
+				
+						// ALARM CLOCK B**
+						// Here we play the sound and
+						// Create and audio object and play it...
+						// The user must click the screen before the sound can play, Google chrome rules....
+						// Store the audio file you want in your directory, set the audio up...
+						var sound = new Audio('alarm.mp3');
+						// Then code to play audio
+						sound.play()
+
+						console.log('alarm-working');
+				};
+
+			// ---------------------------------------------
+			}, 1000);
+			// setInterval one second loop function ENDS
+			// The number above controls the time the clock updates 1000 = milliseconds = 1 second
+
+	});
+	// Document Ready ENDS.
+
+	</script>
+</body>
+</html>

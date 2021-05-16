@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Function Basics</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		ul {
+			margin: 25px;
+			border: 1px solid;
+		}
+		ul li {
+			font-size: 44px;
+			font-weight: 400;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li class="one">One</li>
+		<li class="two">Two</li>
+		<li class="three">Three</li>
+		<li class="four">Four</li>
+	</ul>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<script>
+
+		// **Task write 2 more functions following the same pattern as below to change
+		// classes three and four to red and green
+
+		// *** Extra Write some more code within the functions to delay the color change so the user
+		// can see it visually (Hint -- setTimeout() or jquery's .delay())
+		
+		$(document).ready(function(){
+
+			// Custom js Here
+			// Step 1. Write The Function
+			function updateFirstListItem () {
+				// Go do stuff, code...:
+				$('.one').css('color', 'yellow');
+
+				updateSecondListItem();
+
+			}
+			// Function ENDS here
+
+			// Step 2. Call The First Function 
+			updateFirstListItem();
+
+
+
+			// Step 3. Write The  Second Function
+			function updateSecondListItem() {
+				// Go do stuff, code...:
+				$('.two').css('color', 'blue');
+
+			}
+			// Function ENDS here
+
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arrays</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/style.css">
+	<link rel="stylesheet" href="assets/animate.css">
+	<style>
+		/* CSS Here */
+		* {
+			font-family: 'Source Sans Pro', sans-serif;
+			font-weight: 200;
+			font-size: 55px;
+		}
+		.tlt {
+			margin: 300px;
+			color: yellow;
+			/* jQuery's fadeIn will change this */
+			display: none;
+			line-height: 1.28;
+			color: #fbff38;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="tlt">
+		<span id="one">['Today',</span>
+		<span id="two"> 'is', </span>
+		<span id="three">'A', </span>
+		<span id="three">'Good',</span> 
+		<span id="four">'Day',</span> 
+		<span id="five">'For',</span> 
+		<span id="six">['An'],</span> 
+		<span id="seven">['Array'],</span> 
+		<span id="eight">[1],</span> 
+		<span id="nine">['Say.']]</span>
+	</h1>
+	
+
+	<!-- https://github.com/jschr/textillate -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script src="assets/jquery.fittext.js"></script>
+	<script src="assets/jquery.lettering.js"></script>
+	<script src="assets/jquery.textillate.js"></script>
+
+	<script>
+
+		$(document).ready(function(){
+
+			// A timeout to delay the fade in which is starting from display: none; in the css above
+			// in the css above
+
+			// 1. We need an array
+			var weekDays = ["['Monday',", 'Tuesday', 'Wednesday', 'Thursday', 'Friday '];
+			console.log(weekDays);
+
+			// 2. We need to choose the day from the array
+			console.log(weekDays[4]);
+			// 3. We need to access the D.O.M or html
+			var getDay = document.getElementById('one');
+
+			console.log(getDay);
+			// 4. We need to update the DOM or html
+			getDay.textContent = weekDays[0];
+
+			console.log(getDay.innerHTML)
+
+			setTimeout(function(){
+				$('.tlt').fadeIn(1200);
+			}, 500);
+				// setTimeOut ENDS
+
+			// Custom js Here
+			$('.tlt').textillate({
+				in: {
+				 	// set the effect name
+				   effect: 'rotateIn',
+
+				   // set the delay factor applied to each consecutive character
+				   delayScale: 1.5,
+
+				   // set the delay between each character
+				   delay: 42
+				 }
+			});
+			// textillate effect ENDS
+
+			});
+			// Document Ready ENDS
+
+	</script>
+</body>
+</html>

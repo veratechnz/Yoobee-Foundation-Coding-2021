@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		* {
+			font-family: 'Source Sans Pro', sans-serif;
+			font-weight: 300;
+		}
+
+		body {
+			background-color: #333;
+			font-size: 30px;
+		}
+
+		h4 {
+			font-size: 54px;
+		}
+
+		div {
+			border: 1px solid #000;
+			width: 25%;
+			margin: 0 auto;
+			margin-top: 8em;
+			padding: 1.5em;
+			background-color: #efefef;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div>
+		<h4 id="output">
+			<span id="hours"></span>
+			<span>:</span>
+			<!-- **1 <span id="minuteMarker">0</span> -->
+			<span id="minutes"></span>
+			<span>:</span>
+			<!-- **2 <span id="secondMarker">0</span> -->
+			<span id="seconds"></span>
+			<!-- **3 <span id="am">am</span> -->
+			<!-- or...**3 <span id="pm">pm</span> -->
+		</h4>
+		<p id="statement"></p>
+	</div>
+
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+	<script>
+
+	//*** Task 1 - Use conditionals to:
+			// -  check the time and hide or show the am/pm 
+			// - and hide or show the 0s in the html -->  in **1 +**2 +**3 html above. 
+
+	// Use A. code or B. code below --- B. is quite tricky, do A. first (B. is optional)
+
+
+
+	// A. Code
+	$(document).ready(function(){
+
+		// Access Elements In The HTML
+		var getHoursHtml = document.getElementById('hours');
+		var getMinutesHtml = document.getElementById('minutes');
+		var getSecondsHtml = document.getElementById('seconds');
+		var statement = document.getElementById('statement');
+
+		// ---------------------------------------------------------------
+
+		// Use the date constructor, to make a date and time object
+		var timeStamp = new Date();
+
+		// Assign times to variables
+		var hours = timeStamp.getHours();
+		var minutes = timeStamp.getMinutes();
+		var seconds = timeStamp.getSeconds();
+
+		// Update the DOM or HTML with the time values from the variables above
+		getHoursHtml.textContent = hours;
+		getMinutesHtml.textContent = minutes;
+		getSecondsHtml.textContent = seconds;
+
+		console.log(hours);
+		console.log(minutes);
+		console.log(seconds);
+
+
+
+
+		// **** B. Code Extra // Stay away unless you have some free time
+
+		// ::::::Digital Clock::::::
+		// setInterval(function () {
+		// 	var timeStamp = new Date();
+
+		// 	var hours = timeStamp.getHours();
+		// 	var minutes = timeStamp.getMinutes();
+		// 	var seconds = timeStamp.getSeconds();
+
+		// 	getHoursHtml.textContent = hours;
+		// 	getMinutesHtml.textContent = minutes;
+		// 	getSecondsHtml.textContent = seconds;
+		// }, 1000);
+
+	});
+	// Document Ready ENDS
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Loops</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		table {
+			margin: 4em;
+			width: 80% !important;
+		}
+		.wrapper {
+			text-align: center;
+		}
+		button {
+			margin-top: 25px;
+		}
+	</style>
+</head>
+<body>
+
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th scope="col">#</th>
+	      <th scope="col">First</th>
+	      <th scope="col">Last</th>
+	      <th scope="col">Handle</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <th scope="row">1</th>
+	      <td class="change-it">Mark</td>
+	      <td>Otto</td>
+	      <td>@mdo</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">2</th>
+	      <td>Jacob</td>
+	      <td class="change-it">Thornton</td>
+	      <td>@fat</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">3</th>
+	      <td>Larry</td>
+	      <td class="change-it">the Bird</td>
+	      <td>@twitter</td>
+	    </tr>
+	  </tbody>
+	</table>
+
+	<div class="wrapper">
+		<button class="changing">Change Names</button>
+	</div>
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<script>
+
+	// Here we are using a while loop to loop through some array data 
+		$(document).ready(function(){
+
+			// An array with some string data
+			var newNames = ['Bob', 'Anderson', 'The Lizard'];
+
+			// We first set an index variable to 0, this is the same as an 'i' in the for loop
+			var index = 0;
+
+			// A vanilla js code snippet that returns an array like object of elements. Kind of like $('.change-it') in jQuery
+			var changeItems = document.getElementsByClassName("change-it");
+
+			// While loops continue to loop .... "while (the condition) is still true"... then they stop. 
+			// index is 0 for the first cycle, see var index above, newNames.length equals the length of the array above, 3. 
+			while(index < newNames.length) {
+				// console.log the array item, remember square brakets with index means [0] or [1] or [2] etc...
+				console.log(newNames[index]);
+				// Use the same index to output three new items to the DOM
+				// Remember changeItems is the actual elements, newNames is the array and index just... 
+				// represents 0 1 2 -- the index.
+				changeItems[index].textContent = newNames[index];
+				// increment the index number by 1
+				index++;
+				// Then run the loop again if the index < newNames.length condition is still true 
+			}
+
+
+		}); // Document Ready ENDS
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Function Basics</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		ul {
+			margin: 25px;
+			border: 1px solid;
+		}
+		ul li {
+			font-size: 44px;
+			font-weight: 400;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li class="one">One</li>
+		<li class="two">Two</li>
+		<li class="three">Three</li>
+		<li class="four">Four</li>
+		<li class="five">Five</li>
+	</ul>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<script>
+
+		// **Task read and run the code to improve your understanding...open console
+		
+		$(document).ready(function(){
+
+			// When the loop first runs var i is set to 0
+			// If i is less than 10 ... increment i by 1 '++'
+			// Loop runs until i IS NOT less than 10 / If i is less than 5 another loope cycle will run
+
+			var i; 
+			  
+			for (i = 0; i < 10; i++)  { 
+		  	// Every loop cycle the code within the brackets will run
+		    console.log(i);
+			} 
+
+		});
+	</script>
+</body>
+</html>

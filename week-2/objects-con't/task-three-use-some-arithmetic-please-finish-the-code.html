@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		* {
+			font-family: 'Source Sans Pro', sans-serif;
+			font-weight: 500;
+		}
+
+		body {
+			background-color: #333;
+		}
+
+		li {
+			font-size: 18px;
+		}
+
+		div {
+			border: 1px solid #000;
+			width: 40%;
+			margin: 0 auto;
+			margin-top: 8em;
+			padding: 1.5em;
+			background-color: #efefef;
+		}
+
+		.tlt {
+			margin: 300px;
+			color: yellow;
+			/* jQuery's fadeIn will change this */
+			display: none;
+			line-height: 1.28;
+			color: #fbff38;
+		}
+	</style>
+</head>
+<body>
+
+	<div>
+		<h2>Groceries List</h2>
+		<ul>
+			<li>
+				<span id="fruit"></span>
+				<span>|| Cost: ||</span>
+				<span id="fruitCost"></span>
+			</li>
+			<li>
+				<span id="iceCream"></span>
+				<span>|| Cost: ||</span>
+				<span id="iceCreamCost"></span>
+			</li>
+<!-- 			<li>
+				<span id="???"></span>
+				<span>|| Cost: ||</span>
+				<span id="???"></span>
+			</li>
+			<li>
+				<span id="???"></span>
+				<span>|| Cost: ||</span>
+				<span id="???"></span>
+			</li> -->
+			<li>
+				<span id="total"></span>
+				<span>Total Cost =</span>
+				<span id="totalCost"></span>
+			</li>
+		</ul>
+	</div>
+
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+	<script>
+
+	//*** Task: Finish the code below so the HTML has all the costs and information for fruit, iceCream, wine and meat.
+
+	$(document).ready(function(){
+
+			// An object with some data
+			var groceries = {
+				fruit: 'Apples ',
+				iceCream: 'Vanilla ',
+				wine: 'Red ',
+				meat: 'Chicken ',
+				fruitCost: 10,
+				iceCreamCost: 5,
+				wineCost: 20,
+				meatCost: 12
+			};
+
+			// Console.log the object data for reference purposes
+			console.log(groceries);
+
+			// We need to get the D.O.M or html elements
+			var getFruit = document.getElementById('fruit');
+			var getIceCream = document.getElementById('iceCream');
+
+			// Get the cost span elements
+			var getFruitCost = document.getElementById('fruitCost');
+			var getIceCreamCost = document.getElementById('iceCreamCost');
+			var getTotalCost = document.getElementById('totalCost');
+
+			// Console.dir the html if you want to inspect it
+			console.dir(getIceCream)
+
+			// Updating the html/DOM elements with new text content from the object
+
+			// Update the food types/flavours
+			getFruit.textContent = groceries.fruit;
+			getIceCream.textContent = groceries.iceCream;
+
+			// Update the costs
+			getFruitCost.textContent = groceries.fruitCost;
+			getIceCreamCost.textContent = groceries.iceCreamCost;
+
+			// Update the totals, add them together!
+			getTotalCost.textContent = groceries.fruitCost + groceries.iceCreamCost;
+
+	});
+	// Document Ready ENDS
+
+	</script>
+</body>
+</html>

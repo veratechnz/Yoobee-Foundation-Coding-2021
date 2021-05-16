@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arrays</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		* {
+			font-family: 'Source Sans Pro', sans-serif;
+			font-weight: 500;
+		}
+
+		body {
+			background-color: #333;
+		}
+
+		li {
+			font-size: 18px;
+		}
+
+		div {
+			border: 1px solid #000;
+			width: 40%;
+			margin: 0 auto;
+			margin-top: 8em;
+			padding: 1.5em;
+			background-color: #efefef;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div>
+		<h2>What time is it?</h2>
+		<h4 id="output">
+			<span id="hours"></span>
+			<span>:</span>
+			<span id="minutes"></span>
+			<span>&</span>
+			<span id="seconds"></span>
+			<span>seconds</span>
+		</h4>
+	</div>
+
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+	<script>
+
+	//*** Task 1 - Finish the code and add comments
+
+	$(document).ready(function(){
+
+		var timeStamp = new Date();
+		var hour = timeStamp.getHours();
+		var minutes = timeStamp.getMinutes();
+		var seconds = timeStamp.getSeconds();
+
+		var getHoursHtml = document.getElementById('hours');
+
+		getHoursHtml.textContent = hour;
+
+		console.log(timeStamp);
+		console.log(hour);
+		console.log(seconds);
+		console.log(minutes);
+
+	});
+	// Document Ready ENDS
+
+	</script>
+</body>
+</html>

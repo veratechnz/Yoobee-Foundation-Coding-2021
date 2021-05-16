@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Basics</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+	</style>
+</head>
+<body>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script>
+		/**
+		 *
+		 * A short program with 3 functions
+		 *
+		 */
+
+		// **Task -- make a 4th function. Write, call and place correctly within the code
+		
+		// Document ready Begins
+		$(document).ready(function(){
+			// Custom js Here
+
+
+			// Step 1. Write The Function
+			function alertHelloWorldToTheUser () {
+				// Go do stuff, code...:
+				alert('Hello World');
+
+				// Step 4. Another step from within first function ...calling the second function below
+				secondAlertHelloWorldToTheUser();
+			}
+			// Function ENDS here
+
+
+
+			// Step 3. Write The  Second Function
+			function secondAlertHelloWorldToTheUser () {
+				// Go do stuff, code...:
+				alert('Hello World second time');
+				// Another step from within the second function, calling the third function below
+				thirdAlertHelloWorldToTheConsole()
+			}
+			// Function ENDS here
+
+
+
+			// Step 5. Write The Third Function
+			function thirdAlertHelloWorldToTheConsole () {
+				// Go do stuff, code...:
+				console.log('Hello World third time')
+			}
+			// Function ENDS here
+
+			// Step 2. Call The First Function 
+			alertHelloWorldToTheUser();
+
+		});
+		// Document Ready ENDS
+	</script>
+</body>
+</html>

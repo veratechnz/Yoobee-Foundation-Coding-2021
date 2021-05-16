@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		* {
+			font-family: 'Source Sans Pro', sans-serif;
+			font-weight: 300;
+		}
+
+		body {
+			background-color: #333;
+			font-size: 30px;
+		}
+
+		h4 {
+			font-size: 54px;
+		}
+
+		div {
+			border: 1px solid #000;
+			width: 25%;
+			margin: 0 auto;
+			margin-top: 8em;
+			padding: 1.5em;
+			background-color: #efefef;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div>
+		<h4 id="output">
+			Is it your lucky day?
+		</h4>
+		<p id="day"></p>
+	</div>
+
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+	<script>
+
+	//*** Task 2 - Make another switch statement, with different cases and a different question. 
+
+	$(document).ready(function(){
+
+		// Use the date constructor, to make a date and time object
+		var timeStamp = new Date();
+
+		var theDay = timeStamp.getDay();
+
+		// If the hours are less than 12 and greater than 9
+		var question = window.prompt('What is you favourite day, please use a capital for the first letter.');
+
+		switch (question) {
+		  case theDay:
+		    alert('Yay this is a match.');
+		    break;
+		  default:
+		    // code block
+		    alert('Sorry today is not your fave day its...' + question);
+		}
+
+	});
+	// Document Ready ENDS
+
+	</script>
+</body>
+</html>

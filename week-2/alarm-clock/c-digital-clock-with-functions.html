@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+	<style>
+		/* CSS Here */
+		* {
+			font-family: 'Source Sans Pro', sans-serif;
+			font-weight: 300;
+		}
+
+		body {
+			background-color: #333;
+			font-size: 30px;
+		}
+
+		h4 {
+			font-size: 72px;
+		}
+
+		div {
+			border: 1px solid #000;
+			width: 610px;
+			margin: 0 auto;
+			margin-top: 8em;
+			padding: 1.5em;
+			background-color: #000;
+			position: relative;
+			padding-left: 65px;
+			border-radius: 15px;
+		}
+
+		span {
+			color: green;
+		}
+
+		/* Same has jQuery's hide method - use css display none */
+		.am-marker, 
+		.pm-marker,
+		.minute-marker,
+		.second-marker {
+			display: none;
+		}
+
+		.second-marker,
+		.minute-marker {
+			display: inline-block;
+			margin-left: -5px;
+		}
+
+		.am-marker,
+		.pm-marker {
+			position: absolute;
+			top: 77px;
+			right: 170px;
+			font-size: 40px;
+		}	
+
+	</style>
+</head>
+<body>
+
+	<div class="parent">
+		<h4 id="output">
+			<span id="hours"></span>
+			<span>:</span>
+			<!-- 0 that will hide or show when conditional matches -->
+			<span id="minuteMarker" class="minute-marker">0</span>
+			<span id="minutes"></span>
+			<span>:</span>
+			<!-- 0 that will hide or show when conditional matches -->
+			<span id="secondMarker" class="second-marker">0</span>
+			<span id="seconds"></span>
+			<!-- am/pm that will hide or show when conditional matches -->
+			<span id="amMarker" class="am-marker">AM</span>
+			<span id="pmMarker" class="pm-marker">PM</span>
+		</h4>
+		<p id="statement"></p>
+	</div>
+
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+	<script>
+
+	// A. Digital Clock
+	$(document).ready(function(){
+
+		// Access Elements In The HTML
+		var getHoursHtml = document.getElementById('hours');
+		var getMinutesHtml = document.getElementById('minutes');
+		var getSecondsHtml = document.getElementById('seconds');
+		var statement = document.getElementById('statement');
+
+		// ---------------------------------------------------------------
+		console.log(hours);
+		console.log(minutes);
+		console.log(seconds);
+
+		// Functions Begin *******************---------------------------
+		function makeFirstTime () {
+			var timeStamp = new Date();
+
+			// Code so the initial display works immediatley without a second display
+			var hours = timeStamp.getHours();
+			var minutes = timeStamp.getMinutes();
+			var seconds = timeStamp.getSeconds();
+
+			getHoursHtml.textContent = hours;
+			getMinutesHtml.textContent = minutes;
+			getSecondsHtml.textContent = seconds;
+
+			if (minutes < 10) {
+				$('#minuteMarker').show();
+			} else {
+				$('#minuteMarker').hide();
+			};
+
+			if (seconds < 10) {
+				$('#secondMarker').show();
+			} else {
+				$('#secondMarker').hide();
+			};
+
+			if (hours < 12) {
+				$('#amMarker').show();
+				$('#pmMarker').hide();
+			} else {
+				$('#pmMarker').show();
+				$('#amMarker').hide();
+			};
+
+		}
+
+		// Call the function
+		makeFirstTime();
+
+		// **** B. Code Extra // Stay away unless you have some free time
+		
+		// A function that happens every second
+		function makeSecondsIntervalTime () {
+			// ::::::Digital Clock::::::
+			setInterval(function () {
+				var timeStamp = new Date();
+
+				var hours = timeStamp.getHours();
+				var minutes = timeStamp.getMinutes();
+				var seconds = timeStamp.getSeconds();
+
+				getHoursHtml.textContent = hours;
+				getMinutesHtml.textContent = minutes;
+				getSecondsHtml.textContent = seconds;
+
+				if (minutes < 10) {
+					$('#minuteMarker').show();
+				} else {
+					$('#minuteMarker').hide();
+				};
+
+				console.log(seconds)
+				if (seconds < 10) {
+					$('#secondMarker').show();
+				} else {
+					$('#secondMarker').hide();
+				};
+
+				if (hours < 12) {
+					$('#amMarker').show();
+					$('#pmMarker').hide();
+				} else {
+					$('#pmMarker').show();
+					$('#amMarker').hide();
+				};
+
+			}, 1000);
+		}
+
+		// Call the function
+		makeSecondsIntervalTime();
+
+	});
+	// Document Ready ENDS
+
+	</script>
+</body>
+</html>

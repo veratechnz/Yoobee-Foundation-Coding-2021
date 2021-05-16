@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arrays</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		/* CSS Here */
+		* {
+			font-family: 'Source Sans Pro', sans-serif;
+			font-weight: 500;
+		}
+
+		body {
+			background-color: #333;
+		}
+
+		li {
+			font-size: 18px;
+		}
+
+		h2 {
+			margin-bottom: 25px;
+		}
+
+		div {
+			border: 1px solid #000;
+			width: 40%;
+			margin: 0 auto;
+			margin-top: 8em;
+			padding: 1.5em;
+			background-color: #efefef;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div>
+		<h2>Score</h2>
+	</div>
+
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+	<script>
+
+	//*** Task 2 - Create 2 more number related questions that use a different comparison operator, use the date
+	// object or passMark as your reference point. 
+	$(document).ready(function(){
+
+		var passMark = 50;
+
+		var timeStamp = new Date();
+		var hour = timeStamp.getHours();
+		var minutes = timeStamp.getMinutes();
+		var seconds = timeStamp.getSeconds();
+
+		// Question One
+		var questionOne = window.prompt('What did you get in the test?')
+		
+
+		console.log(questionOne);
+		// Turn answer to number - parseInt turns string into a number
+		var answerCheck = parseInt(questionOne)
+
+		// If the answer to the prompt is not empty
+		if (answerCheck > passMark) {
+			alert('You passed');
+		} else {
+			alert('You failed');
+		}
+
+		// Question Two
+		// var questionTwo = window.prompt('???????');
+
+		// // If the answer to the prompt is not empty
+		// if (?????????????) {
+		// 	alert(?????????);
+		// } else {
+		// 	alert(?????????);
+		// }
+
+
+	});
+	// Document Ready ENDS
+
+	</script>
+</body>
+</html>
