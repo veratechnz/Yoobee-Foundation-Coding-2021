@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- Mobile Meta Viewport Needed for Bootstrap -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Animating The UI</title>
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/rain-effect.css">
+	<link rel="stylesheet" href="css/animation-effect.css">
+
+	<style>
+		/* CSS Here */
+		hr {
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+
+		h4 {
+			font-size: 35px;
+		}
+
+		h3 {
+			margin-top: 35px;
+			margin-bottom: 35px;
+			font-weight: 300;
+			text-align: center;
+		}
+
+		.fa {
+			font-size: 65px;
+			cursor: pointer;
+		}
+
+		.fa-plane {
+			font-size: 15px;
+		}
+
+		.contain {
+			width: 70%;
+			margin: 0 auto;
+			margin-top: 3em;
+		}
+
+		.btn-danger {
+		    color: #fff;
+		    background-color: teal;
+		    border-color: teal;
+				border-radius: 0px !important;
+		}
+
+		.col,
+		.col-4,
+		.col-8,
+		.col-1,
+		.col-6,
+		.col-2,
+		.col-xl-6,
+		.col-lg-4,
+		.col-md-6,
+		.col-sm-3,
+		.col-md-3,
+		.col-md-4 {
+			background-color: #efefef;
+			border: 1px solid #333;
+			height: 250px;
+		}
+
+		.no-border {
+			border: none;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="rain front-row"></div>
+	<div class="rain back-row"></div>
+<!-- 	<div class="toggles">
+	  <div class="splat-toggle toggle active">SPLAT</div>
+	  <div class="back-row-toggle toggle active">BACK<br>ROW</div>
+	  <div class="single-toggle toggle">SINGLE</div>
+	</div> -->
+
+	<!-- Container Fluid will expand to the full width of the viewport -->
+	<div class="container-fluid">
+		<h3>5 PANEL UI</h3>
+		<!-- Using a row class will create a new row -->
+	 	<div class="row justify-content-center">
+	 		<div class="col-2 d-none d-flex flex-row justify-content-center align-items-center">
+	 			<i class="fa fa-play-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Click To Play Your Favorite Song"></i>
+	 		</div>
+	 	</div>
+
+ 		<!-- Using a row class will create a new row -->
+ 	 	<div class="row justify-content-center">
+ 	 		<div class="col-2 d-flex flex-row justify-content-center align-items-center">
+ 	 			<i class="fa fa-space-shuttle animated" data-toggle="tooltip" data-placement="top" title=" <i class='fa fa-plane' aria-hidden='true'></i>Lift Of Time!!! Click To Animate The Space Shuttle Off The Screen" aria-hidden="true"></i> 	 		</div>
+ 	 		<div class="col-2 no-border d-flex flex-row justify-content-center align-items-center">
+ 	 			<i class="fa fa-power-off" data-toggle="tooltip" data-placement="top" title="Click Switch The U.I. To Standby Mode"  aria-hidden="true"></i>
+ 	 		</div>
+ 	 		<div class="col-2 d-flex flex-row justify-content-center align-items-center">
+ 	 			<i class="fa fa-bath" data-toggle="tooltip" data-placement="top" title="Click To Turn On The Shower"  aria-hidden="true"></i>
+ 	 		</div>
+ 	 	</div>
+
+ 		<!-- Using a row class will create a new row -->
+ 	 	<div class="row justify-content-center">
+ 	 		<div class="col-2 d-flex flex-row justify-content-center align-items-center">
+ 	 			<i class="fa fa-question-circle" aria-hidden="true" data-container="body" data-toggle="popover" data-placement="top" data-content="Think of an icon and event that you could add to the UI..." data-trigger="hover"></i>
+ 	 		</div>
+ 	 	</div>
+	</div>
+	<!-- Container Fluid ENDS -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="colorSelectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">SELECT A COLOR FOR STANDBY MODE</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <!-- Input Field -->
+	        <div class="form-group">
+	            <label for="exampleFormControlSelect1">Select a color</label>
+	            <select class="form-control" id="selectColor">
+	              <option>Blue</option>
+	              <option>Red</option>
+	              <option>Yellow</option>
+	              <option>Green</option>
+	              <option>Purple</option>
+	            </select>
+	          </div>
+	        <!-- Input Field ENDS -->
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-primary" id="standByMode">LAUNCH STANDBY MODE</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- Modal ENDS -->
+
+	<script src="js/jquery-3.5.1.js"></script>
+	<script src="js/popper.min.js"></script>
+	<!-- Both being sourced from local -->
+	<script src="js/bootstrap.js"></script>
+	<script src="js/rain-effect.js"></script>
+	<script src="js/2-custom.js"></script>
+</body>
+</html>

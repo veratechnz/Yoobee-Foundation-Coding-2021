@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+	<style>
+		.form-inputs {
+			width: 50%;
+			margin: 0 auto;
+			background-color: #efefef;
+			padding: 20px;
+		}
+		h1 {
+			text-align: center;
+			font-family: 'Great Vibes', cursive;
+			font-size: 55px;
+		}
+		.holder	{
+			width: 60%;
+			margin: 0 auto;
+			background-color: #a5e8ff;
+			padding: 55px;
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
+		.button-hold {
+			text-align: center;
+			margin-top: 28em;
+		}
+		button {
+			width: 140px;
+			padding: 20px;
+		}
+
+		/*The 2 css classes that will be added and removed are .navy and .animation*/
+		.navy {
+			background-color: navy;
+			color: white;
+		}
+
+		/*Animation css*/
+		/*Here is the animation class that is added, it uses keyframes...*/
+		.animation {
+		    -webkit-animation: spin 4s infinite linear;
+		}
+
+		@-webkit-keyframes spin {
+		    0%  {-webkit-transform: rotate(0deg);}
+		    100% {-webkit-transform: rotate(360deg);}   
+		}
+	</style>
+</head>
+<body>
+
+	<div class="holder">
+		<h1>Monday the 18th of May 2020</h1>		
+	</div>
+
+	<div class="button-hold">
+		<button id="addClassNavy" class="btn btn-primary">Add Navy</button>
+		<button id="removeClassNavy" class="btn btn-primary">Remove Navy</button>
+		<button id="addClassAnimation" class="btn btn-primary">Add Animation</button>
+		<button id="removeClassAnimation" class="btn btn-primary">Remove Animation</button>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<!-- Custom javascript // Below/After other libraries like jQuery above -->
+	<script src="custom-vanilla.js"></script>
+</body>
+</html>

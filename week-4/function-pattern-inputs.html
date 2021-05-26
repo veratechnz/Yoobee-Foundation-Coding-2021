@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+	<style>
+		.form-inputs {
+			width: 60%;
+			margin: 0 auto;
+			background-color: #efefef;
+			padding: 20px;
+		}
+		h1 {
+			text-align: center;
+			font-family: 'Great Vibes', cursive;
+			font-size: 55px;
+		}
+		.holder	{
+			width: 60%;
+			margin: 0 auto;
+			background-color: #a5e8ff;
+			padding: 55px;
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
+		.button-hold {
+			text-align: center;
+			margin-top: 50px;
+		}
+		button {
+			width: 140px;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="holder">
+		<h1>Monday the 18th of May 2020</h1>		
+	</div>
+
+	<div class="form-inputs">
+		<div class="form-group">
+		  <label for="fontColor">Select Font Color</label>
+		  <input type="text" class="form-control" id="selectFontColor" placeholder="Select font color">
+		</div>
+		<div class="form-group">
+		  <label for="selectBackgroundColor">Select Background Color</label>
+		  <input type="text" class="form-control" id="selectBackgroundColor" placeholder="Select background color">
+		</div>
+		<div class="form-group">
+		  <label for="selectFontSize">Select Font Size</label>
+		  <input type="text" class="form-control" id="selectFontSize" placeholder="Select font size">
+		</div>
+	</div>
+
+	<div class="button-hold">
+		<button id="update" class="btn btn-primary">Update</button>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<!-- Custom javascript -->
+	<script>
+
+		// ***Task: Complete the code so when the user clicks the update button, the DOM/HTML is
+		// updated and use function patterns like below...
+		$(document).ready(function (){
+
+			// Get button for eventual click event
+			var getUpdateButton = document.getElementById('update');
+
+			getUpdateButton.onclick = function () {
+				// Call functions
+				updateFontColor();
+				updateBackgroundColor();
+				updateFontSize();
+			};
+
+			function updateFontColor () {
+				var getFontColor = document.getElementById('selectFontColor').value;
+				console.log(getFontColor);
+			}
+			// function ENDS
+
+			function updateBackgroundColor () {
+				var getBackgroundColor = document.getElementById('selectBackgroundColor').value;
+				console.log(getBackgroundColor)
+			}
+			// function ENDS
+
+			function updateFontSize () {
+				var getFontSize = document.getElementById('selectFontSize').value;
+				console.log(getFontSize)
+			}
+			// function ENDS
+
+		});
+		// doc ready function ENDS
+
+	</script>
+</body>
+</html>
