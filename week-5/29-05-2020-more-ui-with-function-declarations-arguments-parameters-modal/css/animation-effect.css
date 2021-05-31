@@ -1,0 +1,44 @@
+/*.take-off {
+  animation: rotate 4s linear;
+  animation-fill-mode: forwards;
+  position: relative;
+  animation: rotate 4s linear, 4s fly 4s linear;
+}*/
+
+.take-off {
+  animation: rotate 2s linear, 0.5s fly 2s linear;
+  animation-fill-mode: forwards;
+  position: relative;
+}
+
+.fly {
+ animation: fly 0.5s linear;
+ animation-fill-mode: forwards;
+ position: relative; 
+}
+
+/*Keframes control where an animation starts and ends and also in between. */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg)
+  }
+  40% {
+    transform: rotate(90deg)
+  }
+  100% {
+    transform: rotate(270deg)
+  }
+}
+
+/*Keframes control where an animation starts and ends and also in between. */
+@keyframes fly {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: -2000px;
+  }
+}
+
+
+

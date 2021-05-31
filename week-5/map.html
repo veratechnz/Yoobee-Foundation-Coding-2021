@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Map</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
+	<link href='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
+	<style>
+		/* CSS Here */
+		button {
+			margin: 25px;
+		}
+	</style>
+</head>
+<body>
+	<!-- This is the map div -->
+	<div id='theMap' style='width: 1200px; height: 600px;'></div>
+	<button id="tePaPa">Fly To Te Papa</button>
+	<button id="trainStation">Fly To The Train Station</button>
+	<!-- Map div ENDs -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
+	<script>
+		// Custom js Here
+
+		// Set mapbox token
+		mapboxgl.accessToken = 'pk.eyJ1IjoidmVyYXRlY2giLCJhIjoiY2tiNnpjdnk4MDB0YzJ5bWswY25nbHk0dSJ9.bE_7SAVCD_KllEatVR7p9g';
+
+		// Establish the map and apply some initial settings
+		var map = new mapboxgl.Map({
+			container: 'theMap',
+			style: 'mapbox://styles/mapbox/satellite-v9', // stylesheet location
+			center: [174.780055, -41.279044], // starting position [lng, lat]
+			zoom: 13.5 // starting zoom
+		});
+
+		// Setting up 2 different markers on the map, using different variable names
+		var marker = new mapboxgl.Marker()
+		.setLngLat([174.780055, -41.279044])
+		.addTo(map);
+
+		var markerB = new mapboxgl.Marker()
+		.setLngLat([174.781918, -41.289618])
+		.addTo(map);
+
+		$('#tePaPa').click(function(){
+			map.flyTo({
+				// These options control the ending camera position: centered at
+				// the target, at zoom level 9, and north up.
+				center: [174.781918, -41.289618],
+				zoom: 18.5,
+				bearing: 0,
+				// These options control the flight curve, making it move
+				// slowly and zoom out almost completely before starting
+				// to pan.
+				speed: 0.55, // make the flying slow
+				curve: 1, // change the speed at which it zooms out
+				 
+				// This can be any easing function: it takes a number between
+				// 0 and 1 and returns another number between 0 and 1.
+				easing: function(t) {
+				return t;
+				},
+				// this animation is considered essential with respect to prefers-reduced-motion
+				essential: true
+			});
+		});
+
+		$('#trainStation').click(function(){
+			map.flyTo({
+				// These options control the ending camera position: centered at
+				// the target, at zoom level 9, and north up.
+				center: [174.780055, -41.279044],
+				zoom: 18.5,
+				bearing: 0,
+				// These options control the flight curve, making it move
+				// slowly and zoom out almost completely before starting
+				// to pan.
+				speed: 0.55, // make the flying slow
+				curve: 1, // change the speed at which it zooms out
+				 
+				// This can be any easing function: it takes a number between
+				// 0 and 1 and returns another number between 0 and 1.
+				easing: function(t) {
+				return t;
+				},
+				// this animation is considered essential with respect to prefers-reduced-motion
+				essential: true
+			});
+		});
+
+
+
+		
+
+	</script>
+</body>
+</html>

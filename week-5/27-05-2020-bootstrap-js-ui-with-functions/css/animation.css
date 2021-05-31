@@ -1,0 +1,42 @@
+.animated {  
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+
+.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  animation-name: bounceInLeft;
+  transform: rotate(180deg);
+}
+
+@keyframes bounceInLeft {
+  0% {
+    transform: translateX(-100px);
+  }
+  6% {
+    transform: translateX(-100px);
+  }
+  8% {
+    transform: translateX(-100px);
+  }
+  10% {
+   transform: translateX(-100px); 
+  }
+  40% {
+   transform: translateX(-100px);
+  }
+  60% {
+    transform: translateX(-100px);
+  }
+  80% {
+
+    transform: translateX(-100px);
+  }
+  100% {
+
+    transform: translateX(-100px);
+  }
+}
+
+
+

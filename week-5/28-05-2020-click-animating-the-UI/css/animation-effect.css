@@ -1,0 +1,35 @@
+/*This class combines the 2 keyframe animations*/
+.take-off {
+  /*This is an animation shorthand property, controlling what keyframe, time and animation timing function*/
+  /*After the comma the second time value (2s) controls the delay between the animations. We have chained to animations together here.*/
+  /*rotate and fly have been chained, one after the other with the help of the 2 second delay*/
+  animation: rotate 2s linear, 0.5s fly 2s linear;;
+  animation-fill-mode: forwards;
+  position: relative;
+}
+
+/*rotate Keyframes control where an animation starts and ends and also in between. */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg)
+  }
+  40% {
+    transform: rotate(90deg)
+  }
+  100% {
+    transform: rotate(270deg)
+  }
+}
+
+/*fly Keyframes control where an animation starts and ends and also in between. */
+@keyframes fly {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: -2000px;
+  }
+}
+
+
+
