@@ -117,15 +117,19 @@
 				function hideShowOptionsB () {
 					console.log(people);
 					if (people.value < 10) {
-						hideIt(false, '.option-a, .option-b, .option-c', 4000)
+						hideShowIt(false, '.option-a, .option-b, .option-c', 4000)
 					}
 
-					if (people.value > 10) {
-						hideIt(true, '.option-a, option-b', 4000)
-						hideIt(false, '.option-c', 4000)
+					if ((people.value > 10) && (people.value < 20)) {
+						hideShowIt(true, '.option-a, .option-b', 4000)
+						hideShowIt(false, '.option-c', 4000)
 					}
 
-				function hideIt (hideOrShow, els, time) {
+					if (people.value > 20) {
+						hideShowIt(true, '.option-a, .option-b, .option-c', 10000)
+					}
+
+				function hideShowIt (hideOrShow, els, time) {
 					console.log(els);
 					if (hideOrShow) {
 						$(els).show(time);
